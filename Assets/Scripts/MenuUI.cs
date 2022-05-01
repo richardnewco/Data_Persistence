@@ -12,9 +12,12 @@ using UnityEditor;
 
 public class MenuUI : MonoBehaviour
 {
-    // text fields
+   
     // gettng ref to the inputField
     public GameObject inputField;
+    // storing vehicle ready to be outputed
+    //public GameObject outPutField;
+
     //save this so we can pass it into another session
     public string theName;
 
@@ -29,15 +32,21 @@ public class MenuUI : MonoBehaviour
     {
 
     }
-    // text Input function
+    // text Input function called on the text input field
     public void ReadInput()
     {
         // having the name = input text 
         theName = inputField.GetComponent<Text>().text;
 
-        Debug.Log(theName);
+        Debug.Log( "input field" + theName);
 
-        // saving the name sos that we can use in another session
+        // storing the name in the singleton variable.
+
+        Singleton.Instance.text = theName;
+
+        // print 
+        Debug.Log("singleton field " + Singleton.Instance.text);
+
 
 
     }

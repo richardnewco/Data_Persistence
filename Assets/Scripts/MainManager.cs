@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +11,10 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    // text to store the name
+
+    public Text NameText;
+
     public GameObject GameOverText;
     
     private bool m_Started = false;
@@ -51,6 +55,9 @@ public class MainManager : MonoBehaviour
 
                 Ball.transform.SetParent(null);
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
+
+                // call the name once started 
+                BestScoreName();
             }
         }
         else if (m_GameOver)
@@ -72,5 +79,13 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+    }
+
+    // new function to store text 
+    public void BestScoreName()
+    {
+        // name text  = scoe 
+        NameText.text = Singleton.Instance.text;
+
     }
 }

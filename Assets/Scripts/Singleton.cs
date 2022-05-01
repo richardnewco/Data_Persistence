@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// namespace for the  UI text
 using UnityEngine.UI;
 
 public class Singleton : MonoBehaviour
@@ -10,7 +11,7 @@ public class Singleton : MonoBehaviour
     public static Singleton Instance;
 
     //getting ref to the text
-    public Text text;
+    public string text;
 
 
     private void Awake()
@@ -36,7 +37,7 @@ public class Singleton : MonoBehaviour
     class SaveData
     {
         // variable to store the color
-        public Text text;
+        public string text ;
     }
 
 
