@@ -56,8 +56,7 @@ public class MainManager : MonoBehaviour
                 Ball.transform.SetParent(null);
                 Ball.AddForce(forceDir * 2.0f, ForceMode.VelocityChange);
 
-                // call the name once started 
-                BestScoreName();
+                 
             }
         }
         else if (m_GameOver)
@@ -73,6 +72,12 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+
+        // adding the  new name and score to this function
+        BestScoreName();
+
+       
+
     }
 
     public void GameOver()
@@ -84,8 +89,8 @@ public class MainManager : MonoBehaviour
     // new function to store text 
     public void BestScoreName()
     {
-        // name text  = scoe 
-        NameText.text = Singleton.Instance.text;
-
+        // name text  = name + entered name  and the score
+        NameText.text = "Name : " + Singleton.Instance.text + "  Best" + ScoreText.text;
+       
     }
 }
