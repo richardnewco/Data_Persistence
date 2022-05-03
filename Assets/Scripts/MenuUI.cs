@@ -24,7 +24,9 @@ public class MenuUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // wanna load the name if it exists
+        //Singleton.Instance.LoadText();
+
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class MenuUI : MonoBehaviour
         // having the name = input text 
         theName = inputField.GetComponent<Text>().text;
 
-        Debug.Log( "input field" + theName);
+        Debug.Log("input field" + theName);
 
         // storing the name in the singleton variable.
 
@@ -71,6 +73,7 @@ public class MenuUI : MonoBehaviour
     {
         // saving the color on exit
        // MainManager.Instance.SaveColor();
+       
 
         // if compliled inside the application it will quit when button hit
         // else if the application is built it will exit application if button hit

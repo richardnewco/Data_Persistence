@@ -72,7 +72,7 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
-
+        //
         // adding the  new name and score to this function
         BestScoreName();
 
@@ -84,6 +84,9 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        // when the game is over we want to set  the best score to the name etc
+        BestScoreName();
+
     }
 
     // new function to store text 
