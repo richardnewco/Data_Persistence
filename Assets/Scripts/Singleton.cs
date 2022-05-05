@@ -54,11 +54,18 @@ public class Singleton : MonoBehaviour
         // assigning the text this new data variable 
         data.text = text;
 
+       
+        // print to console text when saved in the main manager exit game
+        Debug.Log("print " + data.text);
+
         // making a json string to hold  this new variable called  data 
         string json = JsonUtility.ToJson(data);
 
+        // testing the string
+        Debug.Log(json);
+
         //saving this data to json format string 
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        File.WriteAllText(Application.dataPath + "/saveFile.json", json);
     }
 
 
@@ -66,7 +73,7 @@ public class Singleton : MonoBehaviour
     public void LoadText()
     {
         // getting reference to previously savefile.json
-        string path = Application.persistentDataPath + "/savefile.json";
+        string path = Application.dataPath + "/saveFile.json";
 
         // checking if file exists if not nothing happens
         if (File.Exists(path))
@@ -77,7 +84,7 @@ public class Singleton : MonoBehaviour
             // transforming from json to unity variable
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            // setting the team color to the new saved  color
+            // setting the text to the new saved  text
             text = data.text;
         }
 

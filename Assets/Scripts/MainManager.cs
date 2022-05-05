@@ -87,6 +87,10 @@ public class MainManager : MonoBehaviour
         // when the game is over we want to set  the best score to the name etc
         BestScoreName();
 
+        // saving the text when the game is over 
+        Singleton.Instance.SaveText();
+       
+
     }
 
     // new function to store text 
