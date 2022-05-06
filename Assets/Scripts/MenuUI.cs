@@ -16,7 +16,9 @@ public class MenuUI : MonoBehaviour
     // gettng ref to the inputField
     public GameObject inputField;
     // storing vehicle ready to be outputed
-    //public GameObject outPutField;
+    //test
+    // the output filed
+    public GameObject outPutField;
 
     //save this so we can pass it into another session
     public string theName;
@@ -25,7 +27,13 @@ public class MenuUI : MonoBehaviour
     void Start()
     {
         // wanna load the name if it exists
-        //Singleton.Instance.LoadText();
+        Singleton.Instance.LoadText();
+        
+        // assinging the name if it exists 
+        theName = Singleton.Instance.text;
+        //testing
+        // outputting the  text 
+        theName = outPutField.GetComponent<Text>().text;
 
     }
 
@@ -37,6 +45,8 @@ public class MenuUI : MonoBehaviour
     // text Input function called on the text input field
     public void ReadInput()
     {
+        
+
         // having the name = input text 
         theName = inputField.GetComponent<Text>().text;
 

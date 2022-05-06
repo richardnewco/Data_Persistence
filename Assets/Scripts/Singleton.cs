@@ -86,6 +86,11 @@ public class Singleton : MonoBehaviour
 
             // setting the text to the new saved  text
             text = data.text;
+
+            Singleton.Instance.text = text;
+            // testing to see if text works
+             Debug.Log( Singleton.Instance.text);
+
         }
 
 

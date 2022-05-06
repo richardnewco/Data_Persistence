@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 0}
+  outPutField: {fileID: 0}
   theName: 
 --- !u!1 &740516149
 GameObject:
@@ -1073,6 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1288484334}
+  outPutField: {fileID: 1288484334}
   theName: 
 --- !u!1 &1661911018
 GameObject:
