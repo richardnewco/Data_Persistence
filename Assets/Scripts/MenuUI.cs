@@ -22,14 +22,13 @@ public class MenuUI : MonoBehaviour
     //save this so we can pass it into another session
     public string theName;
 
-   // private var userName : inputField;
+   
 
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        //input.GetComponent<InputField>().text = "";
+        
         if (inputField != null)
         {
            
@@ -59,20 +58,16 @@ public class MenuUI : MonoBehaviour
     public void ReadInput()
     {
         
-
         // having the name = input text 
         theName = inputField.GetComponent<Text>().text;
 
-        Debug.Log("input field" + theName);
 
         // storing the name in the singleton variable.
 
         Singleton.Instance.text = theName;
 
-        // print 
-        Debug.Log("singleton field " + Singleton.Instance.text);
-
-
+       
+       // Debug.Log("singleton field " + Singleton.Instance.text);
 
     }
 
@@ -96,8 +91,6 @@ public class MenuUI : MonoBehaviour
     {
         // saving the color on exit
        // MainManager.Instance.SaveColor();
-       
-
         // if compliled inside the application it will quit when button hit
         // else if the application is built it will exit application if button hit
 #if UNITY_EDITOR
