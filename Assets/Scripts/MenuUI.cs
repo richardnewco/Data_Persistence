@@ -15,25 +15,38 @@ public class MenuUI : MonoBehaviour
    
     // gettng ref to the inputField
     public GameObject inputField;
-    // storing vehicle ready to be outputed
-    //test
-    // the output filed
-    public GameObject outPutField;
+
+    // getting the inputfield variable 
+     public InputField input;
 
     //save this so we can pass it into another session
     public string theName;
 
+   // private var userName : inputField;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        //input.GetComponent<InputField>().text = "";
+        if (inputField != null)
+        {
+           
+            Debug.Log("input exists");
+        }
         // wanna load the name if it exists
         Singleton.Instance.LoadText();
         
         // assinging the name if it exists 
         theName = Singleton.Instance.text;
-        //testing
-        // outputting the  text 
-        theName = outPutField.GetComponent<Text>().text;
+
+        // input is inputField ,we assign it to theNameString
+        //works
+        input.GetComponent<InputField>().text = theName;
+
+      
+       
 
     }
 
