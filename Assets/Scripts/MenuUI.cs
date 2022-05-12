@@ -22,6 +22,8 @@ public class MenuUI : MonoBehaviour
     //save this so we can pass it into another session
     public string theName;
 
+    public GameObject bestie;
+
    
 
 
@@ -44,9 +46,11 @@ public class MenuUI : MonoBehaviour
         //works
         input.GetComponent<InputField>().text = theName;
 
-      
-       
+        // assigning bestScore
 
+        // bestie = "Name : " + Singleton.Instance.text + "  Best" + Singleton.Instance.bestScore;
+
+        bestie.GetComponent<Text>().text = "Name : " + Singleton.Instance.text + "  BestScore : " + Singleton.Instance.bestScore;
     }
 
     // Update is called once per frame

@@ -337,6 +337,7 @@ MonoBehaviour:
   inputField: {fileID: 0}
   input: {fileID: 0}
   theName: 
+  bestie: {fileID: 0}
 --- !u!1 &740516149
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +841,7 @@ MonoBehaviour:
   inputField: {fileID: 0}
   input: {fileID: 842582748}
   theName: 
+  bestie: {fileID: 1086292876}
 --- !u!1 &1462797663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1094,7 @@ MonoBehaviour:
   inputField: {fileID: 1288484334}
   input: {fileID: 842582748}
   theName: 
+  bestie: {fileID: 1086292876}
 --- !u!1 &1661911018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: 
+  bestScore: 0
 --- !u!4 &2112896081
 Transform:
   m_ObjectHideFlags: 0

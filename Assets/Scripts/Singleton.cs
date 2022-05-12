@@ -15,6 +15,10 @@ public class Singleton : MonoBehaviour
     //getting ref to the text
     public string text;
 
+    // creating the bestScore int
+
+    public int bestScore ;
+
 
     private void Awake()
     {
@@ -41,22 +45,32 @@ public class Singleton : MonoBehaviour
         // variable to store the text
         // sending this data to mainmanager
         public string text;
+
+        public int bestScore;
     }
     /// saving the json data
 
 
-    // saving the color to the json format .
+    // saving the text to the json format .
     public void SaveText()
     {
         // making an instance of the class SaveData and assigning a new variable called data
         SaveData data = new SaveData();
 
+
         // assigning the text this new data variable 
         data.text = text;
+        //assigning the bestsore to data
+        data.bestScore = bestScore;
 
        
         // print to console text when saved in the main manager exit game
         Debug.Log("print " + data.text);
+
+        //saving the bestscore too
+        Debug.Log("print " + data.bestScore);
+
+
 
         // making a json string to hold  this new variable called  data 
         string json = JsonUtility.ToJson(data);

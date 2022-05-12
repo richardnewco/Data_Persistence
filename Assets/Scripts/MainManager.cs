@@ -45,15 +45,12 @@ public class MainManager : MonoBehaviour
         //printing the score to equal the points
         ScoreText.text = $"Score : {m_Points}";
 
+        // assinging newpoints to mpoints
+        newPoints = m_Points;
 
+        //assigning singelton to the points
+        Singleton.Instance.bestScore = newPoints;
 
-
-
-        // add a new points variable to store the new score
-       // newPoints = m_Points;
-        // adding the  new name and score to this function
-
-        
         // running the bestscore function
         BestScoreName();
 
@@ -62,16 +59,18 @@ public class MainManager : MonoBehaviour
     // new function to store text 
     public void BestScoreName()
     {
+
+        // print best score 
+        NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + Singleton.Instance.bestScore;
         // need to compare scores  if the entered score is greater than the stored score 
         // if newpoints which is 0 is greater than mpoints which is 1
-        if(newPoints < m_Points)
-        {
-            // pass new points from mpoints 
-            newPoints = m_Points;
+        //if (newPoints < m_Points)
+        // {
+        // pass new points from mpoints 
+        //   newPoints = m_Points;
 
-            // print best score 
-            NameText.text = "Name : " + Singleton.Instance.text + "  Best" + ScoreText.text;
-        }
+
+        // }
 
 
 
