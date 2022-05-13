@@ -101,9 +101,22 @@ public class Singleton : MonoBehaviour
             // setting the text to the new saved  text
             text = data.text;
 
+            //setting the best score 
+           
+            bestScore = data.bestScore;
+
+            // text 
             Singleton.Instance.text = text;
+
+            //score
+            Singleton.Instance.bestScore = bestScore;
+
             // testing to see if text works
+
              Debug.Log( Singleton.Instance.text);
+
+            //testing to see if the score works
+            Debug.Log(Singleton.Instance.bestScore);
 
         }
 
