@@ -22,7 +22,11 @@ public class MenuUI : MonoBehaviour
     //save this so we can pass it into another session
     public string theName;
 
+   // text field for the name and best score
     public GameObject bestie;
+   
+    // the best score 
+    public int score;
 
    
 

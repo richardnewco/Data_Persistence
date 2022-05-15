@@ -16,18 +16,26 @@ public class MainManager : MonoBehaviour
     public Text NameText;
 
     public GameObject GameOverText;
-    
+
     private bool m_Started = false;
 
     // storing the rescent points
     private int m_Points;
 
-    // storing the new points
-    private int newPoints = 0;
-    
     private bool m_GameOver = false;
 
-    
+
+    //Test new variables 
+    // storing the new points
+    private int newPoints = 0;
+
+    // new string 
+
+    public string newString;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +45,25 @@ public class MainManager : MonoBehaviour
     private void Update()
     {
         BallForce();
+
+        // Test new comparing scores 
+        CompareScores();
     }
 
     void AddPoint(int point)
     {
         m_Points += point;
-        //printing the score to equal the points
-        ScoreText.text = $"Score : {m_Points}";
-
-        // assinging newpoints to mpoints
+        // assigning new points to 
         newPoints = m_Points;
+        //printing the score to equal the points
+        //ScoreText.text = $"Score : {m_Points}";
+
+        ScoreText.text = $"Score : {newPoints}";
+        // assinging newpoints to mpoints
+        //newPoints = m_Points;
 
         //assigning singelton to the points
-        Singleton.Instance.bestScore = newPoints;
+       // Singleton.Instance.bestScore = newPoints;
 
         // running the bestscore function
         BestScoreName();
@@ -61,7 +75,9 @@ public class MainManager : MonoBehaviour
     {
 
         // print best score 
-        NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + Singleton.Instance.bestScore;
+         NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + newPoints;
+
+        //Singleton.Instance.bestScore
         // need to compare scores  if the entered score is greater than the stored score 
         // if newpoints which is 0 is greater than mpoints which is 1
         //if (newPoints < m_Points)
@@ -69,12 +85,9 @@ public class MainManager : MonoBehaviour
         // pass new points from mpoints 
         //   newPoints = m_Points;
 
+       
 
         // }
-
-
-
-
     }
 
     public void BrickSetup()
@@ -128,12 +141,26 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-       
+
         // saving the text when the game is over 
         Singleton.Instance.SaveText();
 
-        // and the score 
+    }
 
+    public void CompareScores()
+    {
+        // Testing runs well 
+
+        // if  bestscore kept  less than new points 
+        if (Singleton.Instance.bestScore < newPoints)
+        {
+            // reassign the friggin  data variable
+
+            Debug.Log(" old score is less than new one. ");
+            
+
+        }
 
     }
 }
+
