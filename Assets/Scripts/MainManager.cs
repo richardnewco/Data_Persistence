@@ -64,7 +64,7 @@ public class MainManager : MonoBehaviour
     {
 
         // print best score 
-         NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + newPoints;
+         NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + Singleton.Instance.bestScore;
 
         // printing the new new name for reference 
         newString = MenuUI.theName;
@@ -139,8 +139,24 @@ public class MainManager : MonoBehaviour
 
             Debug.Log(" old score is less than new one. ");
 
-        }
+           // reassign the  text
+            Singleton.Instance.text = newString;
 
+            // print to console the result 
+            Debug.Log("New name " + Singleton.Instance.text);
+
+            // reassign the points
+            Singleton.Instance.bestScore = newPoints;
+
+            Debug.Log("New name " + Singleton.Instance.bestScore);
+
+        }
+        else
+        {
+            NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :"  + Singleton.Instance.bestScore;
+
+
+        }
     }
 }
 
