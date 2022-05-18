@@ -24,17 +24,11 @@ public class MainManager : MonoBehaviour
 
     private bool m_GameOver = false;
 
-
-    //Test new variables 
-    // storing the new points
-    private int newPoints = 0;
-
     // new string 
-
     public string newString;
 
-
-
+    // storing the new points
+    public static int newPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -59,12 +53,7 @@ public class MainManager : MonoBehaviour
         //ScoreText.text = $"Score : {m_Points}";
 
         ScoreText.text = $"Score : {newPoints}";
-        // assinging newpoints to mpoints
-        //newPoints = m_Points;
-
-        //assigning singelton to the points
-       // Singleton.Instance.bestScore = newPoints;
-
+       
         // running the bestscore function
         BestScoreName();
 
@@ -77,17 +66,11 @@ public class MainManager : MonoBehaviour
         // print best score 
          NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + newPoints;
 
-        //Singleton.Instance.bestScore
-        // need to compare scores  if the entered score is greater than the stored score 
-        // if newpoints which is 0 is greater than mpoints which is 1
-        //if (newPoints < m_Points)
-        // {
-        // pass new points from mpoints 
-        //   newPoints = m_Points;
+        // printing the new new name for reference 
+        newString = MenuUI.theName;
 
-       
+        Debug.Log("newer name " + newString);
 
-        // }
     }
 
     public void BrickSetup()
@@ -129,7 +112,6 @@ public class MainManager : MonoBehaviour
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-
                 // resets the scene run best score name
                 BestScoreName();
 
@@ -149,15 +131,13 @@ public class MainManager : MonoBehaviour
 
     public void CompareScores()
     {
-        // Testing runs well 
-
+       
         // if  bestscore kept  less than new points 
         if (Singleton.Instance.bestScore < newPoints)
         {
             // reassign the friggin  data variable
 
             Debug.Log(" old score is less than new one. ");
-            
 
         }
 

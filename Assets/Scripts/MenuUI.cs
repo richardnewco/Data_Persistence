@@ -19,28 +19,25 @@ public class MenuUI : MonoBehaviour
     // getting the inputfield variable 
      public InputField input;
 
-    //save this so we can pass it into another session
-    public string theName;
+    //save this name  so we can pass it into another session
+    public  static string theName;
 
-   // text field for the name and best score
+   //  gameobject to use for text field for the name and best score
     public GameObject bestie;
    
     // the best score 
     public int score;
 
    
-
-
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {   
         if (inputField != null)
         {
            
             Debug.Log("input exists");
         }
-        // wanna load the name if it exists
+        // loading name and text 
         Singleton.Instance.LoadText();
         
         // assinging the name if it exists 
@@ -52,10 +49,9 @@ public class MenuUI : MonoBehaviour
 
         // assigning bestScore
 
-        // bestie = "Name : " + Singleton.Instance.text + "  Best" + Singleton.Instance.bestScore;
-
-        bestie.GetComponent<Text>().text = "Name : " + Singleton.Instance.text + "  BestScore : " + Singleton.Instance.bestScore;
+        bestie.GetComponent<Text>().text = "Name : " + Singleton.Instance.text + "  BestScore : " + Singleton.Instance.bestScore ;
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -69,13 +65,17 @@ public class MenuUI : MonoBehaviour
         // having the name = input text 
         theName = inputField.GetComponent<Text>().text;
 
+        //STORING THE OLD POINTS 
+        MainManager.newPoints = Singleton.Instance.bestScore;
 
-        // storing the name in the singleton variable.
+        Debug.Log("number" + MainManager.newPoints);
 
-        Singleton.Instance.text = theName;
-
+        //THE OLD NAME
        
-       // Debug.Log("singleton field " + Singleton.Instance.text);
+        Debug.Log("old name " + Singleton.Instance.text);
+
+        // THE NEW NAME
+        Debug.Log("new name  " + theName);
 
     }
 
@@ -98,7 +98,7 @@ public class MenuUI : MonoBehaviour
     public void Exit()
     {
         // saving the color on exit
-       // MainManager.Instance.SaveColor();
+       // MainManager.Instance.SaveText();
         // if compliled inside the application it will quit when button hit
         // else if the application is built it will exit application if button hit
 #if UNITY_EDITOR
