@@ -64,7 +64,7 @@ public class MainManager : MonoBehaviour
     {
 
         // print best score 
-         NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :" + Singleton.Instance.bestScore;
+         NameText.text = " BestScore : " + Singleton.Instance.text + "  :" + Singleton.Instance.bestScore;
 
         // printing the new new name for reference 
         newString = MenuUI.theName;
@@ -153,7 +153,7 @@ public class MainManager : MonoBehaviour
         }
         else
         {
-            NameText.text = "Name : " + Singleton.Instance.text + "  BestScore :"  + Singleton.Instance.bestScore;
+            NameText.text = " BestScore : " + Singleton.Instance.text + " :"  + Singleton.Instance.bestScore;
 
 
         }

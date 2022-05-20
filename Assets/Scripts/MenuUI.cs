@@ -49,7 +49,7 @@ public class MenuUI : MonoBehaviour
 
         // assigning bestScore
 
-        bestie.GetComponent<Text>().text = "Name : " + Singleton.Instance.text + "  BestScore : " + Singleton.Instance.bestScore ;
+        bestie.GetComponent<Text>().text = "  BestScore :  " + Singleton.Instance.text + ": " + Singleton.Instance.bestScore;
     }
     
 
